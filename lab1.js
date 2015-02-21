@@ -73,6 +73,39 @@ var sentence1 = "More food please.",
  HINT: the "split" method on String will be useful.
 */
 
+function chirpMakerOne(sentence){
+  sentence = sentence.split(" ");
+  for (var i = 0; i < sentence.length; i++){
+    sentence[i] = "chirp";
+  };
+  sentence = sentence.join(" ") + ".";
+  console.log("The meerkat says " + sentence);
+  return sentence;
+}
+
+sentence1 = chirpMakerOne(sentence1);
+sentence2 = chirpMakerOne(sentence2);
+
+// Method 2
+// Reset sentence values
+var sentence1 = "More food please.",
+    sentence2 = "Come over here so you can scratch my belly.";
+
+function chirpMakerTwo(theSentence){
+  var i = 0;
+  theSentence = theSentence.split(" ");
+  while (i < theSentence.length){
+    theSentence[i] = "chirp";
+    i++;
+  }
+  theSentence = theSentence.join(" ") + ".";
+  console.log("The meerkat says " + theSentence);
+  return theSentence;
+}
+
+sentence1 = chirpMakerTwo(sentence1);
+sentence2 = chirpMakerTwo(sentence2);
+
 assert(sentence1 === "chirp chirp chirp.", "sentence 1 should have 3 chirps");
 assert(sentence2 === "chirp chirp chirp chirp chirp chirp chirp chirp chirp.",
   "sentence 2 should have 9 chirps");
