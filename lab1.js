@@ -52,6 +52,11 @@ assert(1 === 2, "this is an assertion failure example. 1===2");
  it failed.
 */
 
+// I have a membership at the zoo :-)
+
+assert("Komodo Dragon" === "Komodo Dragon");
+assert("Turtle" === "Kangaroo", "This failed, because the strings aren't equal. Also, because kangaroos don't have shells.");
+
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
  research).  We're going to translate two sentences into meerkat speech.
