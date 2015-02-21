@@ -152,6 +152,23 @@ var mealsPerDay = [ 5, 4, 3, 6, 2, 4, 3, 4, 5, 1 ],
  meals)
 */
 
+function lionFeeding(meals){
+  var averageMeal = 0,
+      totalMeals = 0;
+  for (var i = 0; i < meals.length; i++){
+      totalMeals += meals[i];
+      averageMeal = totalMeals / (i + 1);
+      console.log("On day " + (i + 1) + " the lion ate an average of " + averageMeal + " meals");
+      if (averageMeal < 4) {
+        tooHungryDay = i + 1;
+        console.log("The lion ate the caretaker on day " + tooHungryDay);
+        return tooHungryDay;
+      }
+  };
+}
+
+lionFeeding(mealsPerDay);
+
 assert(tooHungryDay, "don't forget to assign the answer to tooHungryDay");
 assert(tooHungryDay < 10, "the lion is too hungry before the end of the array");
 
