@@ -55,7 +55,7 @@ assert(1 === 2, "this is an assertion failure example. 1===2");
 // I have a membership at the zoo :-)
 
 assert("Komodo Dragon" === "Komodo Dragon");
-assert("Turtle" === "Kangaroo", "This failed, because the strings aren't equal. Also, because kangaroos don't have shells.");
+assert("Turtle" === "Kangaroo", "The strings aren't equal. Also, kangaroos don't have shells.");
 
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
@@ -73,11 +73,11 @@ var sentence1 = "More food please.",
  HINT: the "split" method on String will be useful.
 */
 
-function chirpMakerOne(sentence){
+function chirpMakerOne(sentence) {
   sentence = sentence.split(" ");
-  for (var i = 0; i < sentence.length; i++){
+  for (var i = 0; i < sentence.length; i++) {
     sentence[i] = "chirp";
-  };
+  }
   sentence = sentence.join(" ") + ".";
   console.log("The meerkat says " + sentence);
   return sentence;
@@ -91,10 +91,10 @@ sentence2 = chirpMakerOne(sentence2);
 var sentence1 = "More food please.",
     sentence2 = "Come over here so you can scratch my belly.";
 
-function chirpMakerTwo(theSentence){
+function chirpMakerTwo(theSentence) {
   var i = 0;
   theSentence = theSentence.split(" ");
-  while (i < theSentence.length){
+  while (i < theSentence.length) {
     theSentence[i] = "chirp";
     i++;
   }
@@ -152,10 +152,10 @@ var mealsPerDay = [ 5, 4, 3, 6, 2, 4, 3, 4, 5, 1 ],
  meals)
 */
 
-function lionFeeding(meals){
+function lionFeeding(meals) {
   var averageMeal = 0,
       totalMeals = 0;
-  for (var i = 0; i < meals.length; i++){
+  for (var i = 0; i < meals.length; i++) {
       totalMeals += meals[i];
       averageMeal = totalMeals / (i + 1);
       console.log("On day " + (i + 1) + " the lion ate an average of " + averageMeal + " meals");
@@ -164,7 +164,7 @@ function lionFeeding(meals){
         console.log("The lion ate the caretaker on day " + tooHungryDay);
         return tooHungryDay;
       }
-  };
+  }
 }
 
 lionFeeding(mealsPerDay);
