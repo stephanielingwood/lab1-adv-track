@@ -123,6 +123,10 @@ var favoriteAnimals = [ "elephant", "penguin", "eagle", "camel" ],
 // TODO: 10 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
+nextAnimal = favoriteAnimals[Math.floor(Math.random() * favoriteAnimals.length)];
+
+console.log("The next animal I'm going to visit is the " + nextAnimal);
+
 assert(nextAnimal, "assign something to nextAnimal");
 
 /* ----------------- Hungry Lion ----------------------------------------
