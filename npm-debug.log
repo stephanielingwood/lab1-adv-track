@@ -1,0 +1,227 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/michael/.node/bin/node',
+1 verbose cli   '/home/michael/.node/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '–g',
+1 verbose cli   'jshint' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 warn package.json lab1-beg-track@0.0.0 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ '–g', null ]
+7 verbose cache add name=undefined spec="–g" args=["–g",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '–g',
+8 verbose parsed url   path: '–g',
+8 verbose parsed url   href: '–g' }
+9 verbose cache add [ 'jshint', null ]
+10 verbose cache add name=undefined spec="jshint" args=["jshint",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'jshint',
+11 verbose parsed url   path: 'jshint',
+11 verbose parsed url   href: 'jshint' }
+12 silly lockFile 51e00793-g –g
+13 verbose lock –g /home/michael/.npm/51e00793-g.lock
+14 silly lockFile da5c03cb-jshint jshint
+15 verbose lock jshint /home/michael/.npm/da5c03cb-jshint.lock
+16 silly lockFile 51e00793-g –g
+17 silly lockFile 51e00793-g –g
+18 silly lockFile da5c03cb-jshint jshint
+19 silly lockFile da5c03cb-jshint jshint
+20 verbose addNamed [ '–g', '' ]
+21 verbose addNamed [ null, '*' ]
+22 silly lockFile 72e0e7f9-g –g@
+23 verbose lock –g@ /home/michael/.npm/72e0e7f9-g.lock
+24 verbose addNamed [ 'jshint', '' ]
+25 verbose addNamed [ null, '*' ]
+26 silly lockFile a02a2468-jshint jshint@
+27 verbose lock jshint@ /home/michael/.npm/a02a2468-jshint.lock
+28 silly addNameRange { name: '–g', range: '*', hasData: false }
+29 silly addNameRange { name: 'jshint', range: '*', hasData: false }
+30 verbose request where is /–g
+31 verbose request registry https://registry.npmjs.org/
+32 verbose request id 0e0ab864a4b935bc
+33 verbose url raw /–g
+34 verbose url resolving [ 'https://registry.npmjs.org/', './%E2%80%93g' ]
+35 verbose url resolved https://registry.npmjs.org/%E2%80%93g
+36 verbose request where is https://registry.npmjs.org/%E2%80%93g
+37 info trying registry request attempt 1 at 20:36:22
+38 http GET https://registry.npmjs.org/%E2%80%93g
+39 verbose request where is /jshint
+40 verbose request registry https://registry.npmjs.org/
+41 verbose url raw /jshint
+42 verbose url resolving [ 'https://registry.npmjs.org/', './jshint' ]
+43 verbose url resolved https://registry.npmjs.org/jshint
+44 verbose request where is https://registry.npmjs.org/jshint
+45 info trying registry request attempt 1 at 20:36:22
+46 verbose etag "ATLFRIXMALY99TCTUB3QDJPV6"
+47 http GET https://registry.npmjs.org/jshint
+48 http 200 https://registry.npmjs.org/jshint
+49 silly registry.get cb [ 200,
+49 silly registry.get   { date: 'Sat, 21 Feb 2015 04:36:23 GMT',
+49 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+49 silly registry.get     etag: '"BVEOV43MAKOVCR49ALYA3WE4"',
+49 silly registry.get     'content-type': 'application/json',
+49 silly registry.get     'cache-control': 'max-age=60',
+49 silly registry.get     'content-length': '90898',
+49 silly registry.get     'accept-ranges': 'bytes',
+49 silly registry.get     via: '1.1 varnish',
+49 silly registry.get     age: '5',
+49 silly registry.get     'x-served-by': 'cache-lax1426-LAX',
+49 silly registry.get     'x-cache': 'HIT',
+49 silly registry.get     'x-cache-hits': '2',
+49 silly registry.get     'x-timer': 'S1424493383.150963,VS0,VE0',
+49 silly registry.get     vary: 'Accept',
+49 silly registry.get     'keep-alive': 'timeout=10, max=50',
+49 silly registry.get     connection: 'Keep-Alive' } ]
+50 http 404 https://registry.npmjs.org/%E2%80%93g
+51 verbose headers { date: 'Sat, 21 Feb 2015 04:36:23 GMT',
+51 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+51 verbose headers   'content-type': 'application/json',
+51 verbose headers   'cache-control': 'max-age=0',
+51 verbose headers   'content-length': '52',
+51 verbose headers   'accept-ranges': 'bytes',
+51 verbose headers   via: '1.1 varnish',
+51 verbose headers   age: '0',
+51 verbose headers   'x-served-by': 'cache-lax1435-LAX',
+51 verbose headers   'x-cache': 'MISS',
+51 verbose headers   'x-cache-hits': '0',
+51 verbose headers   'x-timer': 'S1424493383.114493,VS0,VE180',
+51 verbose headers   'keep-alive': 'timeout=10, max=50',
+51 verbose headers   connection: 'Keep-Alive' }
+52 silly registry.get cb [ 404,
+52 silly registry.get   { date: 'Sat, 21 Feb 2015 04:36:23 GMT',
+52 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+52 silly registry.get     'content-type': 'application/json',
+52 silly registry.get     'cache-control': 'max-age=0',
+52 silly registry.get     'content-length': '52',
+52 silly registry.get     'accept-ranges': 'bytes',
+52 silly registry.get     via: '1.1 varnish',
+52 silly registry.get     age: '0',
+52 silly registry.get     'x-served-by': 'cache-lax1435-LAX',
+52 silly registry.get     'x-cache': 'MISS',
+52 silly registry.get     'x-cache-hits': '0',
+52 silly registry.get     'x-timer': 'S1424493383.114493,VS0,VE180',
+52 silly registry.get     'keep-alive': 'timeout=10, max=50',
+52 silly registry.get     connection: 'Keep-Alive' } ]
+53 silly lockFile 72e0e7f9-g –g@
+54 silly lockFile 72e0e7f9-g –g@
+55 silly addNameRange number 2 { name: 'jshint', range: '*', hasData: true }
+56 silly addNameRange versions [ 'jshint',
+56 silly addNameRange   [ '0.1.8',
+56 silly addNameRange     '0.1.9',
+56 silly addNameRange     '0.2.0',
+56 silly addNameRange     '0.2.1',
+56 silly addNameRange     '0.2.2',
+56 silly addNameRange     '0.2.3',
+56 silly addNameRange     '0.3.0',
+56 silly addNameRange     '0.3.1',
+56 silly addNameRange     '0.4.0',
+56 silly addNameRange     '0.5.0',
+56 silly addNameRange     '0.5.1',
+56 silly addNameRange     '0.5.2',
+56 silly addNameRange     '0.5.3',
+56 silly addNameRange     '0.5.4',
+56 silly addNameRange     '0.5.5',
+56 silly addNameRange     '0.5.6',
+56 silly addNameRange     '0.5.7',
+56 silly addNameRange     '0.5.8',
+56 silly addNameRange     '0.5.9',
+56 silly addNameRange     '0.6.0',
+56 silly addNameRange     '0.6.1',
+56 silly addNameRange     '0.6.2',
+56 silly addNameRange     '0.6.3',
+56 silly addNameRange     '0.7.0',
+56 silly addNameRange     '0.7.1',
+56 silly addNameRange     '0.7.2',
+56 silly addNameRange     '0.7.3',
+56 silly addNameRange     '0.8.0',
+56 silly addNameRange     '0.8.1',
+56 silly addNameRange     '0.8.2',
+56 silly addNameRange     '0.9.0',
+56 silly addNameRange     '0.9.1',
+56 silly addNameRange     '1.0.0',
+56 silly addNameRange     '1.1.0',
+56 silly addNameRange     '2.0.0',
+56 silly addNameRange     '2.0.1',
+56 silly addNameRange     '2.1.0',
+56 silly addNameRange     '2.1.1',
+56 silly addNameRange     '2.1.2',
+56 silly addNameRange     '2.1.3',
+56 silly addNameRange     '2.1.4',
+56 silly addNameRange     '2.1.5',
+56 silly addNameRange     '2.1.6',
+56 silly addNameRange     '2.1.7',
+56 silly addNameRange     '2.1.8',
+56 silly addNameRange     '2.1.9',
+56 silly addNameRange     '2.1.10',
+56 silly addNameRange     '2.1.11',
+56 silly addNameRange     '2.2.0',
+56 silly addNameRange     '2.3.0',
+56 silly addNameRange     '2.4.0',
+56 silly addNameRange     '2.4.1',
+56 silly addNameRange     '2.4.2',
+56 silly addNameRange     '2.4.3',
+56 silly addNameRange     '2.4.4',
+56 silly addNameRange     '2.5.0',
+56 silly addNameRange     '2.5.1',
+56 silly addNameRange     '2.5.2',
+56 silly addNameRange     '2.5.3',
+56 silly addNameRange     '2.5.4',
+56 silly addNameRange     '2.5.5',
+56 silly addNameRange     '2.5.6',
+56 silly addNameRange     '2.5.7',
+56 silly addNameRange     '2.5.8',
+56 silly addNameRange     '2.5.9',
+56 silly addNameRange     '2.5.10',
+56 silly addNameRange     '2.5.11',
+56 silly addNameRange     '2.6.0' ] ]
+57 verbose addNamed [ 'jshint', '2.6.0' ]
+58 verbose addNamed [ '2.6.0', '2.6.0' ]
+59 silly lockFile 27126dd9-jshint-2-6-0 jshint@2.6.0
+60 verbose lock jshint@2.6.0 /home/michael/.npm/27126dd9-jshint-2-6-0.lock
+61 silly lockFile b1e51722-pmjs-org-jshint-jshint-2-6-0-tgz https://registry.npmjs.org/jshint/-/jshint-2.6.0.tgz
+62 verbose lock https://registry.npmjs.org/jshint/-/jshint-2.6.0.tgz /home/michael/.npm/b1e51722-pmjs-org-jshint-jshint-2-6-0-tgz.lock
+63 verbose addRemoteTarball [ 'https://registry.npmjs.org/jshint/-/jshint-2.6.0.tgz',
+63 verbose addRemoteTarball   '04e59d04da83aa32301d89115628274871597f33' ]
+64 info retry fetch attempt 1 at 20:36:23
+65 verbose fetch to= /tmp/npm-6214-0cNLRbu0/registry.npmjs.org/jshint/-/jshint-2.6.0.tgz
+66 http GET https://registry.npmjs.org/jshint/-/jshint-2.6.0.tgz
+67 http 200 https://registry.npmjs.org/jshint/-/jshint-2.6.0.tgz
+68 silly lockFile b1e51722-pmjs-org-jshint-jshint-2-6-0-tgz https://registry.npmjs.org/jshint/-/jshint-2.6.0.tgz
+69 silly lockFile b1e51722-pmjs-org-jshint-jshint-2-6-0-tgz https://registry.npmjs.org/jshint/-/jshint-2.6.0.tgz
+70 silly lockFile 27126dd9-jshint-2-6-0 jshint@2.6.0
+71 silly lockFile 27126dd9-jshint-2-6-0 jshint@2.6.0
+72 silly lockFile a02a2468-jshint jshint@
+73 silly lockFile a02a2468-jshint jshint@
+74 error 404 404 Not Found: %E2%80%93g
+74 error 404
+74 error 404 '%E2%80%93g' is not in the npm registry.
+74 error 404 You should bug the author to publish it
+74 error 404 It was specified as a dependency of 'lab1-beg-track'
+74 error 404
+74 error 404 Note that you can also install from a
+74 error 404 tarball, folder, or http url, or git url.
+75 error System Linux 3.13.0-45-generic
+76 error command "/home/michael/.node/bin/node" "/home/michael/.node/bin/npm" "install" "–g" "jshint"
+77 error cwd /home/michael/Repository/CodeFellows/foundations-ii/lab1-adv-track
+78 error node -v v0.10.36
+79 error npm -v 1.4.28
+80 error code E404
+81 verbose exit [ 1, true ]

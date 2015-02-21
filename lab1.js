@@ -52,6 +52,11 @@ assert(1 === 2, "this is an assertion failure example. 1===2");
  it failed.
 */
 
+// I have a membership at the zoo :-)
+
+assert("Komodo Dragon" === "Komodo Dragon");
+assert("Turtle" === "Kangaroo", "The strings aren't equal. Also, kangaroos don't have shells.");
+
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
  research).  We're going to translate two sentences into meerkat speech.
@@ -67,6 +72,39 @@ var sentence1 = "More food please.",
  **two** different kinds of loops to implement this.
  HINT: the "split" method on String will be useful.
 */
+
+function chirpMakerOne(sentence) {
+  sentence = sentence.split(" ");
+  for (var i = 0; i < sentence.length; i++) {
+    sentence[i] = "chirp";
+  }
+  sentence = sentence.join(" ") + ".";
+  console.log("The meerkat says " + sentence);
+  return sentence;
+}
+
+sentence1 = chirpMakerOne(sentence1);
+sentence2 = chirpMakerOne(sentence2);
+
+// Method 2
+// Reset sentence values
+var sentence1 = "More food please.",
+    sentence2 = "Come over here so you can scratch my belly.";
+
+function chirpMakerTwo(theSentence) {
+  var i = 0;
+  theSentence = theSentence.split(" ");
+  while (i < theSentence.length) {
+    theSentence[i] = "chirp";
+    i++;
+  }
+  theSentence = theSentence.join(" ") + ".";
+  console.log("The meerkat says " + theSentence);
+  return theSentence;
+}
+
+sentence1 = chirpMakerTwo(sentence1);
+sentence2 = chirpMakerTwo(sentence2);
 
 assert(sentence1 === "chirp chirp chirp.", "sentence 1 should have 3 chirps");
 assert(sentence2 === "chirp chirp chirp chirp chirp chirp chirp chirp chirp.",
@@ -84,6 +122,10 @@ var favoriteAnimals = [ "elephant", "penguin", "eagle", "camel" ],
 
 // TODO: 10 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
+
+nextAnimal = favoriteAnimals[Math.floor(Math.random() * favoriteAnimals.length)];
+
+console.log("The next animal I'm going to visit is the " + nextAnimal);
 
 assert(nextAnimal, "assign something to nextAnimal");
 
@@ -109,6 +151,23 @@ var mealsPerDay = [ 5, 4, 3, 6, 2, 4, 3, 4, 5, 1 ],
  pondering protein supplements (the first day the average dips below 4
  meals)
 */
+
+function lionFeeding(meals) {
+  var averageMeal = 0,
+      totalMeals = 0;
+  for (var i = 0; i < meals.length; i++) {
+      totalMeals += meals[i];
+      averageMeal = totalMeals / (i + 1);
+      console.log("On day " + (i + 1) + " the lion ate an average of " + averageMeal + " meals");
+      if (averageMeal < 4) {
+        tooHungryDay = i + 1;
+        console.log("The lion ate the caretaker on day " + tooHungryDay);
+        return tooHungryDay;
+      }
+  }
+}
+
+lionFeeding(mealsPerDay);
 
 assert(tooHungryDay, "don't forget to assign the answer to tooHungryDay");
 assert(tooHungryDay < 10, "the lion is too hungry before the end of the array");
