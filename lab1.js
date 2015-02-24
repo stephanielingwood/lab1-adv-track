@@ -54,7 +54,7 @@ assert(1 === 2, "this is an assertion failure example. 1===2");
 
 // Below is my code
 assert("Woodland Park Zoo" === "Woodland Park Zoo");
-assert("Woodland Park Zoo" === "woodland park zoo", "JS is case-sensitive therfore it failed.");
+assert("Woodland Park Zoo" === "woodland park zoo", "JS is case-sensitive therefore it failed.");
 
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
