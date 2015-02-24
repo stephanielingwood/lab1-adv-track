@@ -52,6 +52,10 @@ assert(1 === 2, "this is an assertion failure example. 1===2");
  it failed.
 */
 
+// Below is my code
+assert("Woodland Park Zoo" === "Woodland Park Zoo");
+assert("Woodland Park Zoo" === "woodland park zoo", "JS is case-sensitive therefore it failed.");
+
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
  research).  We're going to translate two sentences into meerkat speech.
@@ -67,6 +71,37 @@ var sentence1 = "More food please.",
  **two** different kinds of loops to implement this.
  HINT: the "split" method on String will be useful.
 */
+
+ // Below is my code
+
+/* Splits the two sentences into an array of
+   the words contained within the sentence.
+*/
+
+    newSentence1Array = sentence1.split(" ");
+    newSentence2Array = sentence2.split(" ");
+
+/* For loop replacing the words with chirp then
+   rejoining them into a sentence. */
+
+    for (i = 0; i < newSentence1Array.length; i++) {
+
+      newSentence1Array[i] = "chirp";
+    }
+
+   sentence1 = (newSentence1Array.join(" ") + ".");
+
+/* Do While loop to replace words with chirp then
+   rejoining them into a sentence. */
+
+  i = 0;
+  do {
+     newSentence2Array[i] = "chirp";
+     i++;
+     }
+  while (i < newSentence2Array.length);
+
+    sentence2 = newSentence2Array.join(" ") + ".";
 
 assert(sentence1 === "chirp chirp chirp.", "sentence 1 should have 3 chirps");
 assert(sentence2 === "chirp chirp chirp chirp chirp chirp chirp chirp chirp.",
@@ -84,6 +119,11 @@ var favoriteAnimals = [ "elephant", "penguin", "eagle", "camel" ],
 
 // TODO: 10 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
+
+// Below is my code
+
+nextAnimal = favoriteAnimals[Math.floor((Math.random() * 4))];
+// Math.floor will ensure the number is an integer
 
 assert(nextAnimal, "assign something to nextAnimal");
 
@@ -109,6 +149,19 @@ var mealsPerDay = [ 5, 4, 3, 6, 2, 4, 3, 4, 5, 1 ],
  pondering protein supplements (the first day the average dips below 4
  meals)
 */
+
+// Below is my code
+
+var counter = 0;
+for (i = 0 ; i < mealsPerDay.length; i++) {
+  counter = counter + mealsPerDay[i]; // Running sum of meals/day
+  average =  counter / (i + 1); // Calculates the average meals/day so far
+  console.log(average); // Prints the average
+  if (average < 4) { // Finds the first day the average drops below 4
+    tooHungryDay = i + 1; // and assigns this value to tooHungryDay then leaves the loop
+    break;
+  }
+}
 
 assert(tooHungryDay, "don't forget to assign the answer to tooHungryDay");
 assert(tooHungryDay < 10, "the lion is too hungry before the end of the array");
