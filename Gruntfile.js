@@ -21,7 +21,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-jscs");
-
   grunt.registerTask("default", [ "jshint", "jscs"]);
 
 };

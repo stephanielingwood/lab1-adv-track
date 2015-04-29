@@ -62,7 +62,7 @@ var sentence1 = "More food please.",
 
 /*
  TODO: 20 points
- Your goal is to replace the words in the above sentences with "chirp" The
+ Your goal is to replace the words in the above sentences with "chirp". The
  assertions at the end of this section should pass when you're done.  Use
  **two** different kinds of loops to implement this.
  HINT: the "split" method on String will be useful.
