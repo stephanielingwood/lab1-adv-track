@@ -1,3 +1,4 @@
+
 /* LAB 1: A Trip to Woodland Park Zoo
 
  Welcome to Lab 1 =)
@@ -26,9 +27,33 @@
  We've implemented a function that will help you sanity-check your code.
 */
 
+/*
+
+var array = [ 1, 2, 3 ];
+var map = array.map(each => each * 10);
+console.log(map);
+
+var foo = 'qux';
+
+if(true){
+  let foo = 'bar';
+  console.log(foo);
+}
+
+function multiple(x, y = x){
+  return x * y;
+}
+
+
+console.log(multiple(3));
+
+var a = [];
+var first = Array.isArray(a) ? a[0] : undefined;
+*/
+
 function assert(expression, failureMessage) {
   if (!expression) {
-    console.log("assertion failure: ", failureMessage);
+    console.warn("assertion failure: ", failureMessage);
   }
 }
 
@@ -132,3 +157,4 @@ or, if you installed grunt globally, you can just type
  Error and warning descriptions will be printed in the terminal.
  To get full points, correct all of the errors/warnings.
 */
+

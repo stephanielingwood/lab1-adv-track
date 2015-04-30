@@ -7,6 +7,7 @@
     "grunt-contrib-jshint": "^0.10.0"
   },
   "devDependencies": {
+    "grunt-babel": "^5.0.0",
     "grunt-jscs": "^0.8.1"
   }
 }

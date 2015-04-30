@@ -5,22 +5,37 @@ module.exports = function(grunt) {
     jshint: {
       files: srcFiles,
       options: {
-        sub: true
+        sub: true,
+        esnext: true
       }
     },
     jscs: {
       src: srcFiles,
       options: {
-        preset: "jquery",
+        esnext: true,
+        // preset: "jquery",
         requireDotNotation: null,
         disallowMultipleVarDecl: null,
         requireMultipleVarDecl: null
       }
+    },
+    babel: {
+        options: {
+            sourceMap: true
+        },
+        dist: {
+            files: {
+                "lab1t.js": "lab1.js"
+            }
+        }
     }
   });
 
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-jscs");
-  grunt.registerTask("default", [ "jshint", "jscs"]);
+  grunt.loadNpmTasks("grunt-babel");
+
+  grunt.registerTask("default", [ "jshint", "jscs", "babel" ]);
+  grunt.registerTask("transpile", [ "babel" ]);
 
 };
