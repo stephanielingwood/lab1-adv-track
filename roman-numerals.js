@@ -29,17 +29,13 @@ function getRoman(input){
 	return sum;
 }
 
+// super-terse version :)
 function getRoman2(input){
 
-	var sum = 0, i = input.length, current, last;
+	var sum = 0, i = input.length, c, l;
 
-	while( last = current, current = values[ input[--i] ] ){
-		if(current < last){
-			sum -= current;
-		}
-		else {
-			sum += current;
-		}
+	while( l = c, c = values[ input[--i] ] ){
+		sum += c < l ? -c : c;
 	}
 
 	return sum;
