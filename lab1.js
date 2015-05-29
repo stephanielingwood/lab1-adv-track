@@ -56,6 +56,9 @@ assert(1 === 2, 'this is an assertion failure example. 1 === 2');
 
 //your code goes here
 
+assert('tapir' === 'tapir');
+assert('tapir' === 'monkey', 'you done goofed up.');
+
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
  research).  We're going to translate two sentences into meerkat speech.
