@@ -57,7 +57,7 @@ assert(1 === 2, 'this is an assertion failure example. 1 === 2');
 //your code goes here
 
 assert('tapir' === 'tapir');
-assert('tapir' === 'monkey', 'you done goofed up.');
+assert('tapir' === 'monkey', 'A tapir is not a monkey.  You done goofed up.');
 
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
@@ -75,7 +75,45 @@ var sentence2 = 'Come over here so you can scratch my belly.';
  HINT: the 'split' method on String will be useful.
 */
 
-//your code goes here
+var sentence1 = 'More food please.';
+var splSentence1 = sentence1.split(" ");
+
+for (; splSentence1.length > 0;) {
+  splSentence1.pop();
+}
+
+while (splSentence1.length < 4) {
+  if (splSentence1.length < 2) {
+    splSentence1.push("chirp ");
+  } else if (splSentence1.length < 3) {
+    splSentence1.push("chirp");
+  } else {
+    splSentence1.push(".");
+  }
+}
+
+sentence1 = splSentence1.toString().replace(/,/g, '');
+
+//---//
+
+var sentence2 = 'Come over here so you can scratch my belly.';
+var splSentence2 = sentence2.split(" ");
+
+for (; splSentence2.length > 0;) {
+  splSentence2.pop();
+}
+
+while (splSentence2.length < 10) {
+  if (splSentence2.length < 8) {
+    splSentence2.push("chirp ");
+  } else if (splSentence2.length < 9) {
+    splSentence2.push("chirp");
+  } else {
+    splSentence2.push(".");
+  }
+}
+
+var sentence2 = splSentence2.toString().replace(/,/g, '');
 
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
 assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
@@ -94,7 +132,7 @@ var nextAnimal;
 // TODO: 12 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
-// your code goes here
+var nextAnimal = favoriteAnimals[Math.floor(Math.random() * favoriteAnimals.length)];
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
