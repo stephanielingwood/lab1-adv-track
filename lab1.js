@@ -92,6 +92,7 @@ while (i < splSent2.length) {
 }
 
 var sentence2 = (splSent2.toString().replace(/,/g, ' ')) + ".";
+console.log(sentence2);
 
 //
 
@@ -141,44 +142,23 @@ var tooHungryDay;
 
 // your code goes here
 
-// mealsPerDay is not monday, tuesday, etc.
-// cycle through array, finding the average each cycle, add index by index,
-// and once the average drops below 4 the caretaker has been eaten
-// tooHungryDay needs number of days before the lion ate caretaker (day before avg < 4)
+var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
+var tooHungryDay;
+var avgMealsPerDay = [];
+var sum = 0;
+var avg = 0;
 
-// add indexes together and push to new array
-// stop when index value < 4
+for (i = 0; i < mealsPerDay.length; i++) {
+  avg = (mealsPerDay[i] + mealsPerDay[i])/mealsPerDay.length;
+  console.log(avg);
+  avgMealsPerDay.push(avg);
+}
 
-// if (
-//   // value of mealsPerDayNewVariable > 4
-//   ) {
-//   // avg of array indexes
-// } else {
-//   var tooHungryDay = //'Day ' + (mealsPerDayNewVariable.length - 1);
-// }
 
-// push to new, sum of new, avg
 
-// var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
-// var tooHungryDay;
-// var sum = 0;
 
-// for (i = 0; i <= mealsPerDay.length; i++) {
-//   var myArr = [];
-//   myArr.push(mealsPerDay[i]);
-//   for (var i = 0; i < myArr.length; i++) {
-//     sum += parseInt(myArr[i], 10);
-//   }
 
-//   var avg = sum/myArr.length;
-//   console.log(avg);
-// }
-
-// for (i = 0; i < 11; i++) { through the indexes of myArr.length - i }
-
-// for (i = 0; i < mealsPerDay.length; i++) {
-//   console.log('Day ' + (i + 1));
-// }
+//
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
