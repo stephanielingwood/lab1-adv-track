@@ -76,23 +76,13 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 */
 
 var sentence1 = 'More food please.';
-var splSentence1 = sentence1.split(" ");
+var splSent1 = sentence1.split(" ");
 
-for (; splSentence1.length > 0;) {
-  splSentence1.pop();
+for (var i = 0; i < splSent1.length; i++) {
+  splSent1.splice([i], 1, "chirp");
 }
 
-while (splSentence1.length < 4) {
-  if (splSentence1.length < 2) {
-    splSentence1.push("chirp ");
-  } else if (splSentence1.length < 3) {
-    splSentence1.push("chirp");
-  } else {
-    splSentence1.push(".");
-  }
-}
-
-sentence1 = splSentence1.toString().replace(/,/g, '');
+var sentence1 = (splSent1.toString().replace(/,/g, ' ')) + ".";
 
 //---//
 
@@ -160,6 +150,26 @@ var tooHungryDay;
 */
 
 // your code goes here
+
+// mealsPerDay is not monday, tuesday, etc.
+// cycle through array, finding the average each cycle, add index by index,
+// and once the average drops below 4 the caretaker has been eaten
+// tooHungryDay needs number of days before the lion ate caretaker (day before avg < 4)
+
+// add indexes together and push to new array
+// stop when index value < 4
+
+// if (
+//   // value of mealsPerDayNewVariable > 4
+//   ) {
+//   // avg of array indexes
+// } else {
+//   var tooHungryDay = //'Day ' + (mealsPerDayNewVariable.length - 1);
+// }
+
+// for (i = 0; i < mealsPerDay.length; i++) {
+//   console.log('Day ' + (i + 1));
+// }
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
