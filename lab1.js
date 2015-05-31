@@ -140,76 +140,23 @@ var tooHungryDay;
  meals)
 */
 
-// your code goes here
-
 var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
-
-var tooHungryDay;
-var avgMealsPerDay = [];
-var sum = 0;
-var days = 0;
-var avg = []];
-
-
-
-//test loop
-// first sum
-// average
-//
-
-var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
-var tooHungryDay;
+var tooHungryDay = 0;
+var tooHungryDayFound = false;
 var sum = 0;
 var days = 0;
 var avg = 0;
 
-for (i = 0; i < mealsPerDay.length; i++) {
+for (i = 0; i < mealsPerDay.length  && tooHungryDayFound != true; i++) {
   sum = sum + mealsPerDay[i];
   days++;
-  avg = sum/days;
-}
+  avg = sum / days;
 
-
-
-console.log(avg);
-
-// if (avg[i] >= 4) {
-//   for (i = 0; i < testArr.length; i++) {
-//     avg.push(testArr[i]/(i + 1));
-//   }
-// } else {
-//   var tooHungryDay = avg[i];
-// }
-
-for (i = 0; i < testArr.length;) {
-  avg.push(testArr[i]/(i + 1));
-  if (avg[i] >= 4) {
-    i++;
-  } else {
-    var tooHungryDay = avg[i];
+  if (avg < 4) {
+    tooHungryDay = days;
+    tooHungryDayFound = true;
   }
 }
-
-
-console.log(tooHungryDay);
-
-// for (i = 0; i < mealsPerDay.length; i++) {
-//   console.log(mealsPerDay[i]/(i + 1));
-
-  // sum =
-
-
-
-  // avg = (mealsPerDay[i] + mealsPerDay[i])/mealsPerDay.length;
-  // console.log(avg);
-  // avgMealsPerDay.push(avg);
-}
-
-
-
-
-
-//
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
