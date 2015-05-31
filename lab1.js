@@ -92,7 +92,6 @@ while (i < splSent2.length) {
 }
 
 var sentence2 = (splSent2.toString().replace(/,/g, ' ')) + ".";
-console.log(sentence2);
 
 //
 
