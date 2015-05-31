@@ -1,5 +1,4 @@
-'use strict';
-
+"use strict";
 /* LAB 1: A Trip to Woodland Park Zoo
 
  Welcome to Lab 1 =)
@@ -29,7 +28,7 @@
 
 function assert(expression, failureMessage) {
   if (!expression) {
-    console.log('assertion failure: ', failureMessage);
+    console.log("assertion failure: ", failureMessage);
   }
 }
 
@@ -44,7 +43,7 @@ function assert(expression, failureMessage) {
 */
 
 assert(1 === 1);
-assert(1 === 2, 'this is an assertion failure example. 1 === 2');
+assert(1 === 2, "this is an assertion failure example. 1 === 2");
 
 /*------------------Assertions-------------------------------------------------
  TODO: 8 points
@@ -54,6 +53,9 @@ assert(1 === 2, 'this is an assertion failure example. 1 === 2');
  it failed.
 */
 
+assert("zoo" === "zoo");
+assert("monkey" === "gorilla", "it is not true that monkey === gorilla");
+
 //your code goes here
 
 /* ----------------- Meerkats -------------------------------------------------
@@ -61,8 +63,8 @@ assert(1 === 2, 'this is an assertion failure example. 1 === 2');
  research).  We're going to translate two sentences into meerkat speech.
 */
 
-var sentence1 = 'More food please.';
-var sentence2 = 'Come over here so you can scratch my belly.';
+var sentence1 = "More food please.";
+var sentence2 = "Come over here so you can scratch my belly.";
 
 /*
  TODO: 20 points
@@ -72,11 +74,24 @@ var sentence2 = 'Come over here so you can scratch my belly.';
  HINT: the 'split' method on String will be useful.
 */
 
-//your code goes here
+function chirps (sentence) {
+	var output = "chirp";
+	for (var i = 0; i < sentence.length; i++) {
+		if (sentence[ i ] === " ") {
+			output += " chirp";
+		}
+	}
+	output += ".";
+	console.log(output);
+	return output;
+}
 
-assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
-assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
-  'sentence 2 should have 9 chirps');
+sentence1 = chirps(sentence1);
+sentence2 = chirps(sentence2);
+
+assert(sentence1 === "chirp chirp chirp.", "sentence 1 should have 3 chirps");
+assert(sentence2 === "chirp chirp chirp chirp chirp chirp chirp chirp chirp.",
+	"sentence 2 should have 9 chirps");
 
 /* ----------------- Favorite Animals ----------------------------------------
  The zoo is closing in 20 minutes. You still haven't seen your four favorite
@@ -85,15 +100,15 @@ assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
  Hint: read the Math.random description on MDN.
 */
 
-var favoriteAnimals = ['elephant', 'penguin', 'eagle', 'camel'];
+var favoriteAnimals = [ "elephant", "penguin", "eagle", "camel" ];
 var nextAnimal;
 
 // TODO: 12 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
-// your code goes here
-
-assert(nextAnimal, 'assign something to nextAnimal');
+nextAnimal = favoriteAnimals[Math.floor(Math.random() * favoriteAnimals.length)];
+console.log(nextAnimal);
+assert(nextAnimal, "assign something to nextAnimal");
 
 /* ----------------- Hungry Lion ----------------------------------------
  As long as the lion is well-fed, he doesn't take too much heed of the
@@ -106,7 +121,7 @@ assert(nextAnimal, 'assign something to nextAnimal');
 */
 
 // number of times the new caretaker fed the lion. one array entry per day
-var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
+var mealsPerDay = [ 5, 4, 3, 6, 2, 4, 3, 4, 5, 1 ];
 var tooHungryDay;
 
 /*
@@ -118,10 +133,31 @@ var tooHungryDay;
  meals)
 */
 
-// your code goes here
+function average (data) {
+	var total = 0;
+	for (var i = 0; i < data.length; i++) {
+		total += data[ i ];
+	}
+	var output = total / (data.length);
+	console.log(output + " is the current average");
+	return output;
+}
 
-assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
-assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
+function outputDeathDay (schedule) {
+	var storage = [];
+	for (var i = 0; i < schedule.length; i++) {
+		storage.push(schedule[i]);
+		if (average(storage) < 4 ) {
+			break;
+		}
+	}
+	console.log((i + 1) + " is the return value");
+	return i + 1;
+}
+
+tooHungryDay = outputDeathDay(mealsPerDay);
+assert(tooHungryDay, "remember to assign the answer to tooHungryDay");
+assert(tooHungryDay < 10, "the lion is too hungry before the end of the array");
 
 /* ----------------- Code Style ----------------------------------------
  TODO: 10 points
