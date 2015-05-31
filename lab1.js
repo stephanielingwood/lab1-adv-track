@@ -54,8 +54,6 @@ assert(1 === 2, 'this is an assertion failure example. 1 === 2');
  it failed.
 */
 
-//your code goes here
-
 assert('tapir' === 'tapir');
 assert('tapir' === 'monkey', 'A tapir is not a monkey.  You done goofed up.');
 
@@ -75,7 +73,6 @@ var sentence2 = 'Come over here so you can scratch my belly.';
  HINT: the 'split' method on String will be useful.
 */
 
-var sentence1 = 'More food please.';
 var splSent1 = sentence1.split(" ");
 
 for (var i = 0; i < splSent1.length; i++) {
@@ -86,7 +83,6 @@ var sentence1 = (splSent1.toString().replace(/,/g, ' ')) + ".";
 
 //---//
 
-var sentence2 = 'Come over here so you can scratch my belly.';
 var splSent2 = sentence2.split(" ");
 var i = 0;
 
@@ -177,10 +173,6 @@ var tooHungryDay;
 //   var avg = sum/myArr.length;
 //   console.log(avg);
 // }
-
-
-
-//
 
 // for (i = 0; i < 11; i++) { through the indexes of myArr.length - i }
 
