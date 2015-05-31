@@ -143,15 +143,66 @@ var tooHungryDay;
 // your code goes here
 
 var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
+
 var tooHungryDay;
 var avgMealsPerDay = [];
 var sum = 0;
+var days = 0;
+var avg = []];
+
+
+
+//test loop
+// first sum
+// average
+//
+
+var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
+var tooHungryDay;
+var sum = 0;
+var days = 0;
 var avg = 0;
 
 for (i = 0; i < mealsPerDay.length; i++) {
-  avg = (mealsPerDay[i] + mealsPerDay[i])/mealsPerDay.length;
-  console.log(avg);
-  avgMealsPerDay.push(avg);
+  sum = sum + mealsPerDay[i];
+  days++;
+  avg = sum/days;
+}
+
+
+
+console.log(avg);
+
+// if (avg[i] >= 4) {
+//   for (i = 0; i < testArr.length; i++) {
+//     avg.push(testArr[i]/(i + 1));
+//   }
+// } else {
+//   var tooHungryDay = avg[i];
+// }
+
+for (i = 0; i < testArr.length;) {
+  avg.push(testArr[i]/(i + 1));
+  if (avg[i] >= 4) {
+    i++;
+  } else {
+    var tooHungryDay = avg[i];
+  }
+}
+
+
+console.log(tooHungryDay);
+
+// for (i = 0; i < mealsPerDay.length; i++) {
+//   console.log(mealsPerDay[i]/(i + 1));
+
+  // sum =
+
+
+
+  // avg = (mealsPerDay[i] + mealsPerDay[i])/mealsPerDay.length;
+  // console.log(avg);
+  // avgMealsPerDay.push(avg);
 }
 
 
