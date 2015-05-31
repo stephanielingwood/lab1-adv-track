@@ -87,23 +87,17 @@ var sentence1 = (splSent1.toString().replace(/,/g, ' ')) + ".";
 //---//
 
 var sentence2 = 'Come over here so you can scratch my belly.';
-var splSentence2 = sentence2.split(" ");
+var splSent2 = sentence2.split(" ");
+var i = 0;
 
-for (; splSentence2.length > 0;) {
-  splSentence2.pop();
+while (i < splSent2.length) {
+  splSent2.splice([i], 1, "chirp");
+  i++;
 }
 
-while (splSentence2.length < 10) {
-  if (splSentence2.length < 8) {
-    splSentence2.push("chirp ");
-  } else if (splSentence2.length < 9) {
-    splSentence2.push("chirp");
-  } else {
-    splSentence2.push(".");
-  }
-}
+var sentence2 = (splSent2.toString().replace(/,/g, ' ')) + ".";
 
-var sentence2 = splSentence2.toString().replace(/,/g, '');
+//
 
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
 assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
@@ -166,6 +160,29 @@ var tooHungryDay;
 // } else {
 //   var tooHungryDay = //'Day ' + (mealsPerDayNewVariable.length - 1);
 // }
+
+// push to new, sum of new, avg
+
+// var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
+// var tooHungryDay;
+// var sum = 0;
+
+// for (i = 0; i <= mealsPerDay.length; i++) {
+//   var myArr = [];
+//   myArr.push(mealsPerDay[i]);
+//   for (var i = 0; i < myArr.length; i++) {
+//     sum += parseInt(myArr[i], 10);
+//   }
+
+//   var avg = sum/myArr.length;
+//   console.log(avg);
+// }
+
+
+
+//
+
+// for (i = 0; i < 11; i++) { through the indexes of myArr.length - i }
 
 // for (i = 0; i < mealsPerDay.length; i++) {
 //   console.log('Day ' + (i + 1));
