@@ -74,6 +74,36 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 
 //your code goes here
 
+//This functions takes a string parameter and changes all of the words to chirp
+var translateToMeerkat = function(sentence) {
+  //splits sentences
+  sentence = sentence.split(' ');
+
+  //changes each sentence array value to 'chirp'
+  for (var i = 0; i < sentence.length; i++) {
+  sentence[i] = 'chirp';
+  }
+
+  //strings array back to one string
+  var chirpString = '';
+  var chirpCount = 0;
+  while (chirpCount < sentence.length) {
+    chirpString += sentence[chirpCount];
+    if (chirpCount === sentence.length - 1) {
+      chirpString += '.';
+    }else {
+      chirpString += ' ';
+    }
+    chirpCount++;
+  }
+  return chirpString;
+};
+
+sentence1 = translateToMeerkat(sentence1);
+sentence2 = translateToMeerkat(sentence2);
+console.log(sentence1);
+console.log(sentence2);
+
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
 assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
   'sentence 2 should have 9 chirps');
@@ -85,13 +115,15 @@ assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
  Hint: read the Math.random description on MDN.
 */
 
-var favoriteAnimals = ['elephant', 'penguin', 'eagle', 'camel'];
+var favoriteAnimals = [ 'elephant', 'penguin', 'eagle', 'camel' ];
 var nextAnimal;
 
 // TODO: 12 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
-
 // your code goes here
+var randNum = Math.floor(Math.random() * 4);
+nextAnimal = favoriteAnimals[randNum];
+console.log(nextAnimal);
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -106,7 +138,7 @@ assert(nextAnimal, 'assign something to nextAnimal');
 */
 
 // number of times the new caretaker fed the lion. one array entry per day
-var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
+var mealsPerDay = [ 5, 4, 3, 6, 2, 4, 3, 4, 5, 1 ];
 var tooHungryDay;
 
 /*
@@ -117,8 +149,21 @@ var tooHungryDay;
  pondering protein supplements (the first day the average dips below 4
  meals)
 */
-
+var totalMeals = 0;
+var firstTimeHungry = true;
 // your code goes here
+for (var i = 0; i < mealsPerDay.length; i++) {
+  //calculates the average and prints the day and average
+  totalMeals += mealsPerDay[i];
+  var averageMeals = totalMeals / (i + 1);
+  console.log('Average meals/day for day ' + (i + 1) + ' = ' + averageMeals);
+  //if statement to check if average meals is below 4 and if its the first time
+  if (averageMeals < 4 && firstTimeHungry) {
+    tooHungryDay = i;
+    console.log('Day ' + (i + 1) + ' is hungry day');
+    firstTimeHungry = false;
+  }
+}
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
