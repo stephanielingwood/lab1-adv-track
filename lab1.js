@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /* LAB 1: A Trip to Woodland Park Zoo
 
@@ -29,7 +29,7 @@
 
 function assert(expression, failureMessage) {
   if (!expression) {
-    console.log('assertion failure: ', failureMessage);
+    console.log("assertion failure: ", failureMessage);
   }
 }
 
@@ -44,7 +44,7 @@ function assert(expression, failureMessage) {
 */
 
 assert(1 === 1);
-assert(1 === 2, 'this is an assertion failure example. 1 === 2');
+assert(1 === 2, "this is an assertion failure example. 1 === 2");
 
 /*------------------Assertions-------------------------------------------------
  TODO: 8 points
@@ -56,13 +56,18 @@ assert(1 === 2, 'this is an assertion failure example. 1 === 2');
 
 //your code goes here
 
+var numBears = 5;
+var numLions = 6;
+assert(numLions > numBears);
+assert(numLions + numBears > 12, "this fails because there are less than 12 bears and lions.");
+
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
  research).  We're going to translate two sentences into meerkat speech.
 */
 
-var sentence1 = 'More food please.';
-var sentence2 = 'Come over here so you can scratch my belly.';
+var sentence1 = "More food please.";
+var sentence2 = "Come over here so you can scratch my belly.";
 
 /*
  TODO: 20 points
@@ -74,9 +79,29 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 
 //your code goes here
 
-assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
-assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
-  'sentence 2 should have 9 chirps');
+var meerkatSpeech = function(sen) {
+	var newArr = sen.split(" ");
+	var newSent = "chirp";
+	var len = newArr.length;
+	if (newArr.length < 1) {
+		newSent = "";
+	}
+	while (len > 1) {
+		newSent = newSent + " chirp";
+		len--;
+	}
+	for (var i = 0; i < len; i++) {
+		newSent = newSent + ".";
+	}
+	return (newSent);
+};
+
+sentence1 = meerkatSpeech(sentence1);
+sentence2 = meerkatSpeech(sentence2);
+
+assert(sentence1 === "chirp chirp chirp.", "sentence 1 should have 3 chirps");
+assert(sentence2 === "chirp chirp chirp chirp chirp chirp chirp chirp chirp.",
+  "sentence 2 should have 9 chirps");
 
 /* ----------------- Favorite Animals ----------------------------------------
  The zoo is closing in 20 minutes. You still haven't seen your four favorite
@@ -85,7 +110,8 @@ assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
  Hint: read the Math.random description on MDN.
 */
 
-var favoriteAnimals = ['elephant', 'penguin', 'eagle', 'camel'];
+var favoriteAnimals = [ "elephant", "penguin", "eagle", "camel" ];
+
 var nextAnimal;
 
 // TODO: 12 points
@@ -93,7 +119,20 @@ var nextAnimal;
 
 // your code goes here
 
-assert(nextAnimal, 'assign something to nextAnimal');
+var animalPick = function() {
+	var random = Math.random() * favoriteAnimals.length;
+	if (random >= 0 && random < 1) {
+		nextAnimal = favoriteAnimals[0];
+	} else if (random >= 1 && random < 2) {
+		nextAnimal = favoriteAnimals[1];
+	} else if (random >= 2 && random < 3) {
+		nextAnimal = favoriteAnimals[2];
+	} else {
+		nextAnimal = favoriteAnimals[3];
+	}
+};
+animalPick();
+assert(nextAnimal, "assign something to nextAnimal");
 
 /* ----------------- Hungry Lion ----------------------------------------
  As long as the lion is well-fed, he doesn't take too much heed of the
@@ -106,7 +145,7 @@ assert(nextAnimal, 'assign something to nextAnimal');
 */
 
 // number of times the new caretaker fed the lion. one array entry per day
-var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
+var mealsPerDay = [ 5, 4, 3, 6, 2, 4, 3, 4, 5, 1 ];
 var tooHungryDay;
 
 /*
@@ -119,9 +158,23 @@ var tooHungryDay;
 */
 
 // your code goes here
+var hungerCheck = function() {
+	var total = 0;
+	var numDays = 0;
+	for (var i = 0; i < mealsPerDay.length; i++) {
+		total += mealsPerDay[i];
+		numDays++;
+		console.log("The average number of meals is " + total / numDays + ".");
+		if (total / numDays < 4) {
+			tooHungryDay = numDays;
+			return tooHungryDay;
+		}
+	}
+};
+hungerCheck();
 
-assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
-assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
+assert(tooHungryDay, "remember to assign the answer to tooHungryDay");
+assert(tooHungryDay < 10, "the lion is too hungry before the end of the array");
 
 /* ----------------- Code Style ----------------------------------------
  TODO: 10 points
