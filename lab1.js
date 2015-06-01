@@ -146,7 +146,7 @@ var sum = 0;
 var days = 0;
 var avg = 0;
 
-for (i = 0; i < mealsPerDay.length  && tooHungryDayFound != true; i++) {
+for (i = 0; i < mealsPerDay.length  && tooHungryDayFound !== true; i++) {
   sum = sum + mealsPerDay[i];
   days++;
   avg = sum / days;
@@ -156,6 +156,8 @@ for (i = 0; i < mealsPerDay.length  && tooHungryDayFound != true; i++) {
     tooHungryDayFound = true;
   }
 }
+
+console.log(tooHungryDay);
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
