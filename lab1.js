@@ -73,25 +73,25 @@ var sentence2 = 'Come over here so you can scratch my belly.';
  HINT: the 'split' method on String will be useful.
 */
 
-var splSent1 = sentence1.split(" ");
+var sentence1 = sentence1.split(" ");
 
-for (var i = 0; i < splSent1.length; i++) {
-  splSent1.splice([i], 1, "chirp");
+for (var i = 0; i < sentence1.length; i++) {
+  sentence1[i] = "chirp";
 }
 
-var sentence1 = (splSent1.toString().replace(/,/g, ' ')) + ".";
+var sentence1 = (sentence1.toString().replace(/,/g, ' ')) + ".";
 
 //---//
 
-var splSent2 = sentence2.split(" ");
+var sentence2 = sentence2.split(" ");
 var i = 0;
 
-while (i < splSent2.length) {
-  splSent2.splice([i], 1, "chirp");
+while (i < sentence2.length) {
+  sentence2[i] = "chirp";
   i++;
 }
 
-var sentence2 = (splSent2.toString().replace(/,/g, ' ')) + ".";
+var sentence2 = (sentence2.toString().replace(/,/g, ' ')) + ".";
 
 //
 
