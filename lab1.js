@@ -54,7 +54,8 @@ assert(1 === 2, 'this is an assertion failure example. 1 === 2');
  it failed.
 */
 
-//your code goes here
+assert('tapir' === 'tapir');
+assert('tapir' === 'monkey', 'A tapir is not a monkey.  You done goofed up.');
 
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
@@ -72,7 +73,27 @@ var sentence2 = 'Come over here so you can scratch my belly.';
  HINT: the 'split' method on String will be useful.
 */
 
-//your code goes here
+var sentence1 = sentence1.split(" ");
+
+for (var i = 0; i < sentence1.length; i++) {
+  sentence1[i] = "chirp";
+}
+
+var sentence1 = (sentence1.toString().replace(/,/g, ' ')) + ".";
+
+//---//
+
+var sentence2 = sentence2.split(" ");
+var i = 0;
+
+while (i < sentence2.length) {
+  sentence2[i] = "chirp";
+  i++;
+}
+
+var sentence2 = (sentence2.toString().replace(/,/g, ' ')) + ".";
+
+//
 
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
 assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
@@ -91,7 +112,7 @@ var nextAnimal;
 // TODO: 12 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
-// your code goes here
+var nextAnimal = favoriteAnimals[Math.floor(Math.random() * favoriteAnimals.length)];
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -118,7 +139,25 @@ var tooHungryDay;
  meals)
 */
 
-// your code goes here
+var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
+var tooHungryDay = 0;
+var tooHungryDayFound = false;
+var sum = 0;
+var days = 0;
+var avg = 0;
+
+for (i = 0; i < mealsPerDay.length  && tooHungryDayFound !== true; i++) {
+  sum = sum + mealsPerDay[i];
+  days++;
+  avg = sum / days;
+
+  if (avg < 4) {
+    tooHungryDay = days;
+    tooHungryDayFound = true;
+  }
+}
+
+console.log(tooHungryDay);
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
