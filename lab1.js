@@ -54,6 +54,10 @@ assert(1 === 2, 'this is an assertion failure example. 1 === 2');
  it failed.
 */
 
+assert('giraffe'.length === 'meerkat'.length, 'this test passes because both strings are the same length');
+assert('giraffe' === 'meerkat', 'this test fails because they are different strings');
+
+
 //your code goes here
 
 /* ----------------- Meerkats -------------------------------------------------
