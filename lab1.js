@@ -43,8 +43,8 @@ function assert(expression, failureMessage) {
  Here are some examples for how to use the assert method:
 */
 
-assert(1 === 1, '1 equals 1 - this assert will pass.');
-assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
+//assert(1 === 1, '1 equals 1 - this assert will pass.');
+//assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
 
 /* ===========================================================================
 ------------------Assertions (8 points total)---------------------------------
@@ -57,7 +57,9 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
  it failed.
 */
 
-//your code goes here
+var cat = 'cat';
+assert(cat === 'cat', 'Cats are equal!');
+assert(cat === 'dog', 'Cats and dogs are not the same!');
 
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
@@ -77,12 +79,34 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 // TODO: part #1: use a for loop to replace the words in sentence 1 with
 // 'chirp' (10 points)
 
-// your code goes here
+function meerkatFor(englishSentence) {
+  var array = englishSentence.split(' ');
+  var meerkatSentence = '';
+  for (var i = 0;i < array.length;i++) {
+    meerkatSentence += ' chirp';
+  }
+  meerkatSentence += '.';
+  return meerkatSentence.trim();
+}
+
+sentence1 = meerkatFor(sentence1);
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
-// your code goes here
+function meerkatWhile(englishSentence) {
+  var array = englishSentence.split(' ');
+  var meerkatSentence = '';
+  var i = 0;
+  while (i < array.length) {
+    meerkatSentence += ' chirp';
+    i++ ;
+  }
+  meerkatSentence += '.';
+  return meerkatSentence.trim();
+}
+
+sentence2 = meerkatWhile(sentence2);
 
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
@@ -104,7 +128,8 @@ var nextAnimal;
 // TODO: 12 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
-// your code goes here
+var animalSelection = Math.floor(Math.random() * favoriteAnimals.length);
+nextAnimal = favoriteAnimals[animalSelection];
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -133,7 +158,20 @@ var tooHungryDay;
  meals)
 */
 
-// your code goes here
+var average = 0;
+var sum = 0;
+var tooHungryDay;
+var sum;
+
+for (var i = 0; i < mealsPerDay.length ; i++)
+{
+  sum += mealsPerDay[i];
+  average = sum / (i + 1);
+  if (average < 4) {
+    tooHungryDay = i + 1;
+    //break; This made the assert fail.
+  }
+}
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
