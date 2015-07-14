@@ -43,8 +43,8 @@ function assert(expression, failureMessage) {
  Here are some examples for how to use the assert method:
 */
 
-assert(1 === 1, '1 equals 1 - this assert will pass.');
-assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
+// assert(1 === 1, '1 equals 1 - this assert will pass.');
+// assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
 
 /* ===========================================================================
 ------------------Assertions (8 points total)---------------------------------
@@ -58,7 +58,8 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
 */
 
 //your code goes here
-
+// assert(3 === 3, 'This message is true, it will pass');
+// assert(4 <= 3, 'Cats usually only meow for humans, they communicate in other ways.');
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
 ===========================================================================
@@ -78,12 +79,33 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 // 'chirp' (10 points)
 
 // your code goes here
-
+function stringSplit(sentence) {
+  // this.sentence = sentence;
+  var newSentence = sentence.split(' ');
+  var i;
+  for (i = 0; i < newSentence.length; i++) {
+    newSentence[i] = 'chirp';
+  }
+  return newSentence;
+}
+var meerkatTranslator = stringSplit(sentence1);
+console.log(meerkatTranslator);
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
 // your code goes here
+function meerkatTranslatorDoWhile(sentence) {
+	// this.sentence = sentence;
+  var i = 0;
+  var newSentence = sentence.split(' ');
 
+  do {
+    newSentence[i] = 'chirp';
+    i++;
+	}
+  while (i < newSentence.length);
+}
+meerkatTranslatorDoWhile(sentence2);
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
 assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
@@ -105,6 +127,13 @@ var nextAnimal;
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
 // your code goes here
+function pickNextAnimal(favoriteAnimals) {
+  var a = Math.floor(Math.random() * 4);
+  nextAnimal = favoriteAnimals[a];
+  return nextAnimal;
+}
+
+pickNextAnimal(favoriteAnimals);
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -134,6 +163,17 @@ var tooHungryDay;
 */
 
 // your code goes here
+function lionMeals() {
+  var totalMealsPerDay = 0;
+  var avgMealsPerDay = 0;
+  for (var i = 0; i < mealsPerDay.length; i++) {
+    totalMealsPerDay += mealsPerDay[i];
+    avgMealsPerDay = totalMealsPerDay / mealsPerDay.length;
+  }
+  return avgMealsPerDay;
+}
+
+lionMeals();
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
@@ -155,3 +195,4 @@ assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
  Error and warning descriptions will be printed in the terminal.
  To get full points, correct all of the errors/warnings.
 */
+//creating a comment for git commit purposes
