@@ -96,14 +96,14 @@ console.log(meerkatTranslator);
 // your code goes here
 function meerkatTranslatorDoWhile(sentence) {
 	// this.sentence = sentence;
-	var i = 0;
-	var newSentence = sentence.split(' ');
+  var i = 0;
+  var newSentence = sentence.split(' ');
 
-	do {
-		newSentence[i] = 'chirp';
-		i++;
+  do {
+    newSentence[i] = 'chirp';
+    i++;
 	}
-	while (i < newSentence.length);
+  while (i < newSentence.length);
 }
 meerkatTranslatorDoWhile(sentence2);
 // Leave these assertions as-is! If they pass, your code works.
@@ -164,12 +164,12 @@ var tooHungryDay;
 
 // your code goes here
 function lionMeals() {
-	var totalMealsPerDay = 0;
-	var avgMealsPerDay = 0;
-	for (var i = 0; i < mealsPerDay.length; i++) {
-		totalMealsPerDay += mealsPerDay[i];
-		avgMealsPerDay = totalMealsPerDay / mealsPerDay.length;
-	}
+  var totalMealsPerDay = 0;
+  var avgMealsPerDay = 0;
+  for (var i = 0; i < mealsPerDay.length; i++) {
+    totalMealsPerDay += mealsPerDay[i];
+    avgMealsPerDay = totalMealsPerDay / mealsPerDay.length;
+  }
   return avgMealsPerDay;
 }
 
